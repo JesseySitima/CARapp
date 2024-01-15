@@ -18,10 +18,8 @@ const StudentScreen = ({ route, navigation }) => {
     { id: 12, name: 'Margaret Chirombo' },
     // Add more dummy data if needed
   ];
-  const { selectedCategory } = route.params;
-
-  // Log the received parameter
-  console.log('Selected Category:', selectedCategory);
+  
+  
 
   const filteredStudents = students.filter(student =>
     student.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -46,7 +44,7 @@ const StudentScreen = ({ route, navigation }) => {
           <TouchableOpacity
             key={student.id}
             style={styles.studentItem}
-            onPress={() => navigation.navigate('QuizScreen', { studentId: student.id, studentName: student.name, selectedCategory })}
+            onPress={() => navigation.navigate('WeekPage', { studentId: student.id, studentName: student.name})}
           >
             <Text>{student.name}</Text>
           </TouchableOpacity>

@@ -20,7 +20,7 @@ const CategoriesPage = ({ route, navigation }) => {
     console.log(`Clicked on ${selectedCategory.name} in ${selectedPeriod.week}`);
     console.log('Words in the selected category:', selectedCategory.words);
   
-    navigation.navigate('Students', { selectedPeriod, selectedCategory, data });
+    navigation.navigate('QuizScreen', { selectedPeriod, selectedCategory, data });
   
     console.log(`Navigated to StudentScreen with ${selectedCategory.name} in ${selectedPeriod.week}`);
   };

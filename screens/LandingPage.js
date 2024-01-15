@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 export default class LandingPage extends Component {
   navigateToWeekPage = () => {
-    this.props.navigation.navigate('WeekPage');
+    this.props.navigation.navigate('Students');
   };
 
   state = {
@@ -23,7 +23,7 @@ export default class LandingPage extends Component {
     return (
       <View style={styles.container}>
        
-        <Text style={styles.welcomeText}>Welcome to the Continuous Learning Assessment Tools</Text>
+        <Text style={styles.welcomeText}>Continuous Assessment and Remedial (CAnR)</Text>
         <View style={styles.gifContainer}>
             <Image
               source={require('../assets/images/pencil2.gif')}
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   welcomeText: {
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center',

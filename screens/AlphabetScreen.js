@@ -57,6 +57,7 @@ const AlphabetScreen = ({ route, navigation }) => {
     };
   
     useEffect(() => {
+      
       const windowHeight = Dimensions.get('window').height;
       const calculatedFontSize = Math.max(windowHeight / 6, 80); // Ensure a minimum font size of 80
       setFontSize(calculatedFontSize);
@@ -70,7 +71,7 @@ const AlphabetScreen = ({ route, navigation }) => {
 
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.heading}>Quiz for: {studentName}</Text>
+      <Text style={styles.heading}>{selectedCategory.name}</Text>
 
       <View style={styles.container}>
         {alphabetCompleted ? (
