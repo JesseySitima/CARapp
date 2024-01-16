@@ -28,8 +28,8 @@ const CategoriesPage = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Categories for {selectedPeriod.week}</Text>
-      <Text style={styles.instruction}>Click on a category to proceed</Text>
+      <Text style={styles.heading}>Sections for {selectedPeriod.week}</Text>
+      <Text style={styles.instruction}>Click on a section to proceed</Text>
       <ScrollView style={styles.scrollContainer}>
         {categories.map((category, index) => (
           <TouchableOpacity

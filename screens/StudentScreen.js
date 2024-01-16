@@ -37,7 +37,7 @@ const StudentScreen = ({ route, navigation }) => {
           />
       </View>
      
-      <Text style={styles.subtitle}>Select a student to start the quiz:</Text>
+      <Text style={styles.subtitle}>Select a student to start the assessment:</Text>
      
       <ScrollView contentContainerStyle={styles.studentList}>
         {filteredStudents.map((student) => (

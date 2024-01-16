@@ -11,9 +11,20 @@ const InstructionsPopup = ({ isVisible, onClose }) => {
     >
       <View style={styles.modalContainer}>
         <View style={styles.popupContainer}>
+            <View>
+                <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+                <Text style={styles.closeButtonText}>Close</Text>
+              </TouchableOpacity>
+            </View>
+            <View>
+              <TouchableOpacity style={styles.headlineButton}>
+              <Text style={styles.headlineButtonText}>GuideLines</Text>
+            </TouchableOpacity>
+            </View>
+
           <Text style={styles.title}>Note to Teachers: How to assess learners</Text>
           <Text style={styles.description}>
-            For each assessment, you will need samples A and B of the appropriate assessment instrument, as well as the skill chart to record the results.
+            For each assessment, you will need samples A and B of the appropriate assessment instrument.
           </Text>
 
           {/* Maina a malembo Section */}
@@ -42,12 +53,9 @@ const InstructionsPopup = ({ isVisible, onClose }) => {
           {renderSection('Step 4', [
             'Turn to the ‘Mawu’ section of the instrument.',
             'Point to each word and ask the learner to read the words one by one.',
-           
+           ,
           ])}
 
-          <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-            <Text style={styles.closeButtonText}>Close</Text>
-          </TouchableOpacity>
         </View>
       </View>
     </Modal>
@@ -67,14 +75,25 @@ const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    
+    alignItems: 'stretch', // Align items stretch to cover the whole screen
   },
   popupContainer: {
+    flex: 1,
     padding: 20,
-    backgroundColor: 'gray',
+    backgroundColor: 'white',
     borderRadius: 10,
-    
+  },
+  headlineButton: {
+    backgroundColor: 'orange', // Choose your preferred color
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  headlineButtonText: {
+    color: 'white', // Choose your preferred text color
+    fontWeight: 'bold',
+    fontSize: 20,
   },
   title: {
     fontSize: 18,
@@ -90,15 +109,17 @@ const styles = StyleSheet.create({
   },
   instruction: {
     marginBottom: 8,
-    color: 'white'
   },
   closeButton: {
-    marginTop: 15,
+    backgroundColor: '#6a82fb', // Choose your preferred color
+    padding: 10,
+    borderRadius: 5,
     alignSelf: 'flex-end',
+    marginBottom: 20
   },
   closeButtonText: {
-    color: 'blue',
-    textDecorationLine: 'underline',
+    color: 'white', // Choose your preferred text color
+    fontWeight: 'bold',
   },
 });
 

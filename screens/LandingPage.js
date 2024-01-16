@@ -23,7 +23,7 @@ export default class LandingPage extends Component {
     return (
       <View style={styles.container}>
        
-        <Text style={styles.welcomeText}>Continuous Assessment and Remedial (CAnR)</Text>
+        <Text style={styles.welcomeText}>Continuous Assessment and Remediation (CAnR)</Text>
         <View style={styles.gifContainer}>
             <Image
               source={require('../assets/images/pencil2.gif')}

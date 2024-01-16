@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { ScreenOrientation } from 'expo';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 const AlphabetScreen = ({ route, navigation }) => {
@@ -71,13 +72,18 @@ const AlphabetScreen = ({ route, navigation }) => {
 
   return (
     <View style={styles.mainContainer}>
+      
+
       <Text style={styles.heading}>{selectedCategory.name}</Text>
 
       <View style={styles.container}>
         {alphabetCompleted ? (
           <View>
-            <Text style={styles.completedText}>Quiz Completed!</Text>
+            <Text style={styles.completedText}>Assessment for {selectedCategory.name} Completed!</Text>
+            <Text style={styles.completedText}>Score :  {score}</Text>
+
             <TouchableOpacity style={[styles.button, styles.retryButton]} onPress={handleRetry}>
+              <Icon name="refresh" size={20} color="white" />
               <Text style={styles.buttonText}>Retry</Text>
             </TouchableOpacity>
           </View>
@@ -101,11 +107,13 @@ const AlphabetScreen = ({ route, navigation }) => {
             </View>
           </View>
         )}
+    
         {alphabetCompleted && (
-          <TouchableOpacity style={[styles.button, styles.finishButton]} onPress={handleFinishQuiz}>
-            <Text style={styles.buttonText}>Finish</Text>
-          </TouchableOpacity>
-        )}
+                <TouchableOpacity style={styles.goBackButton} onPress={() => navigation.goBack()}>
+
+                    <Text style={styles.goBackText}>Next Section</Text>
+                </TouchableOpacity>
+            )}
       </View>
     </View>
   );
@@ -170,9 +178,29 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   retryButton: {
-    backgroundColor: '#3498db', // Blue color
+    backgroundColor: '#ffac46', // Blue color
     marginTop: 10,
+    width: 100,
+    alignItems: 'center',
+    alignSelf: 'center',
+    flexDirection: 'row',
   },
+  goBackButton: {
+    backgroundColor: '#2ecc71', // Blue color
+    marginTop: 10,
+    width: 100,
+    alignItems: 'center',
+    alignSelf: 'center',
+    flexDirection: 'row',
+},
+goBackText: {
+    color: '#3498db',
+    marginLeft: 5,
+    color: 'white',
+    fontWeight: 'bold',
+    padding: 10
+},
+
 });
 
 export default AlphabetScreen;

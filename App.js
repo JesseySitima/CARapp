@@ -43,7 +43,7 @@ const App = () => {
         <Stack.Screen
           name="Categories"
           component={CategoriesPage}
-          options={headerWithInstructions}
+          options={{ headerTitle: 'Sections', ...headerWithInstructions }}
         />
         <Stack.Screen
           name="Students"
@@ -53,7 +53,7 @@ const App = () => {
         <Stack.Screen
           name="QuizScreen"
           component={AlphabetScreen}
-          options={headerWithInstructions}
+          options={{ headerTitle: 'Assessments', ...headerWithInstructions }}
         />
         <Stack.Screen
           name="ScoreScreen"
