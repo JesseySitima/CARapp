@@ -50,19 +50,19 @@ const WeekPage = ({ navigation }) => {
         categories: [
           {
             name: 'Maina a Malembo',
-            words: ['word1', 'word2', 'word3'],
+            words: ['E', 'T', 'u', 'P', 'W'],
           },
           {
             name: 'Maliwu',
-            words: ['word4', 'word5', 'word6'],
+            words: ['a', 'd', 'n', 'ch', 'Nd'],
           },
           {
             name: 'Maphatikizo',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Se', 'chu', 'tu', 'ndo', 'mi'],
           },
           {
             name: 'Mawu',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Ndowa', 'zako', 'tema', 'chule', 'kulima'],
           },
         ],
       },
@@ -71,19 +71,19 @@ const WeekPage = ({ navigation }) => {
         categories: [
           {
             name: 'Maina a Malembo',
-            words: ['word1', 'word2', 'word3'],
+            words: ['E', 'T', 'u', 'P', 'W'],
           },
           {
             name: 'Maliwu',
-            words: ['word4', 'word5', 'word6'],
+            words: ['a', 'd', 'n', 'ch', 'Nd'],
           },
           {
             name: 'Maphatikizo',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Se', 'chu', 'tu', 'ndo', 'mi'],
           },
           {
             name: 'Mawu',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Ndowa', 'zako', 'tema', 'chule', 'kulima'],
           },
         ],
       },
@@ -92,19 +92,19 @@ const WeekPage = ({ navigation }) => {
         categories: [
           {
             name: 'Maina a Malembo',
-            words: ['word1', 'word2', 'word3'],
+            words: ['E', 'T', 'u', 'P', 'W'],
           },
           {
             name: 'Maliwu',
-            words: ['word4', 'word5', 'word6'],
+            words: ['a', 'd', 'n', 'ch', 'Nd'],
           },
           {
             name: 'Maphatikizo',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Se', 'chu', 'tu', 'ndo', 'mi'],
           },
           {
             name: 'Mawu',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Ndowa', 'zako', 'tema', 'chule', 'kulima'],
           },
         ],
       },
@@ -113,19 +113,19 @@ const WeekPage = ({ navigation }) => {
         categories: [
           {
             name: 'Maina a Malembo',
-            words: ['word1', 'word2', 'word3'],
+            words: ['E', 'T', 'u', 'P', 'W'],
           },
           {
             name: 'Maliwu',
-            words: ['word4', 'word5', 'word6'],
+            words: ['a', 'd', 'n', 'ch', 'Nd'],
           },
           {
             name: 'Maphatikizo',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Se', 'chu', 'tu', 'ndo', 'mi'],
           },
           {
             name: 'Mawu',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Ndowa', 'zako', 'tema', 'chule', 'kulima'],
           },
         ],
       },
@@ -134,19 +134,19 @@ const WeekPage = ({ navigation }) => {
         categories: [
           {
             name: 'Maina a Malembo',
-            words: ['word1', 'word2', 'word3'],
+            words: ['E', 'T', 'u', 'P', 'W'],
           },
           {
             name: 'Maliwu',
-            words: ['word4', 'word5', 'word6'],
+            words: ['a', 'd', 'n', 'ch', 'Nd'],
           },
           {
             name: 'Maphatikizo',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Se', 'chu', 'tu', 'ndo', 'mi'],
           },
           {
             name: 'Mawu',
-            words: ['word7', 'word8', 'word9'],
+            words: ['Ndowa', 'zako', 'tema', 'chule', 'kulima'],
           },
         ],
       },

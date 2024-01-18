@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import { ScreenOrientation } from 'expo';
+import * as ScreenOrientation from 'expo-screen-orientation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import * as Font from 'expo-font';
 
 
 const AlphabetScreen = ({ route, navigation }) => {
@@ -63,12 +64,38 @@ const AlphabetScreen = ({ route, navigation }) => {
       const calculatedFontSize = Math.max(windowHeight / 6, 80); // Ensure a minimum font size of 80
       setFontSize(calculatedFontSize);
       
-      
+      // Set the screen orientation to landscape when the component mounts
+    const setLandscapeOrientation = async () => {
+      await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+    };
+
+    setLandscapeOrientation();
   
       // Shuffle the alphabet when the component mounts or when the selected category changes
       const newShuffledAlphabet = shuffleArray(alphabet);
       setShuffledAlphabet(newShuffledAlphabet);
+
+      return () => {
+        // Reset the screen orientation to portrait when the component unmounts
+        ScreenOrientation.unlockAsync();
+      };
     }, [alphabet]); // Add alphabet as a dependency
+
+    // Load the Indika font when the component mounts
+    useEffect(() => {
+      const loadFont = async () => {
+        try {
+          await Font.loadAsync({
+            Andika: require('../components/Andika-Regular.ttf'),
+          });
+          console.log('Font loaded successfully');
+        } catch (error) {
+          console.error('Error loading font:', error);
+        }
+      };
+    
+      loadFont();
+    }, []);
 
   return (
     <View style={styles.mainContainer}>
@@ -88,7 +115,7 @@ const AlphabetScreen = ({ route, navigation }) => {
             </TouchableOpacity>
           </View>
         ) : (
-          <Text style={[styles.alphabetText, { fontSize }]}>
+          <Text style={[styles.alphabetText, { fontSize, fontFamily: 'Andika',  }]}>
             {shuffledAlphabet[currentIndex]}
           </Text>
         )}
@@ -128,7 +155,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         marginBottom: 10,
-        color: '#3498db',
+       
         textAlign: 'center',
       },
       container: {
@@ -137,8 +164,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
       },
       alphabetText: {
-        fontWeight: 'bold',
-        color: '#3498db',
+       
         marginBottom: 20,
       },
   buttonContainer: {
@@ -188,7 +214,7 @@ const styles = StyleSheet.create({
   goBackButton: {
     backgroundColor: '#2ecc71', // Blue color
     marginTop: 10,
-    width: 100,
+    width: 120,
     alignItems: 'center',
     alignSelf: 'center',
     flexDirection: 'row',
@@ -198,7 +224,7 @@ goBackText: {
     marginLeft: 5,
     color: 'white',
     fontWeight: 'bold',
-    padding: 10
+    padding: 10,
 },
 
 });
